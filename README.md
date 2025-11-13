@@ -141,7 +141,7 @@ Both models achieved **perfect MNDCG** based on the dataset and relevance labels
 
 ### Result Summary
 
-Both **HuggingFace MiniLM** and **Gemini 005** achieved **MNDCG = 1.0**, meaning:
+Both **HuggingFace MiniLM** and **Gemini 001** achieved **MNDCG = 1.0**, meaning:
 
 * Both models produced the *same ranking order* as ground truth for the tested dataset.
 * Both are suitable for semantic page–query relevance tasks.
@@ -153,7 +153,7 @@ Both **HuggingFace MiniLM** and **Gemini 005** achieved **MNDCG = 1.0**, meaning
   * Fast, no cost, low latency
   * Works offline
   * Excellent for large-scale indexing
-* **Gemini 005**
+* **Gemini 001**
 
   * Slightly richer semantic understanding
   * Good for complex/longer queries
@@ -183,29 +183,9 @@ project/
 docker-compose up -d
 ```
 
-### 2. Run the crawler
-
+### 2
 ```bash
-python crawler/crawl.py
-```
-
-### 3. Embed and Index
-
-```bash
-python embeddings/hf_embedding.py
-python embeddings/gemini_embedding.py
-```
-
-### 4. Compute Relevancy Scores
-
-```bash
-python evaluation/calc_similarity.py
-```
-
-### 5. Run MNDCG Comparison
-
-```bash
-python evaluation/ndcg_evaluator.py
+   run click all of Jupyter or run each section of code.
 ```
 
 ---
