@@ -1,0 +1,1 @@
+**Elastic Open Crawler can be used in production setups, but for this local prototype, a custom Python-based crawler is used to replicate the same functionality.**
