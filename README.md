@@ -183,9 +183,9 @@ project/
 docker-compose up -d
 ```
 
-### 2
+### 2. Run embedding_search_performance_evaluation.ipynb
 ```bash
-   run click all of Jupyter or run each section of code.
+   click run all of Jupyter Note book or run each section of code.
 ```
 
 ---
