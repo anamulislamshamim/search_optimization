@@ -51,19 +51,19 @@ For each query in the dataset:
 
 * Generate embeddings for:
 
-  * OpenAI → `text-embedding-3-small`
-  * Gemini → `text-embedding-005`
+  * OpenAI → `text-embedding-3-small` and `text-embedding-3-large`
+  * Gemini → `text-embedding-001`
   * HuggingFace → `all-MiniLM-L6-v2`
 * Compare query embeddings with webpage embeddings using cosine similarity.
 * Store the "relevancy score" per model.
 
-> Note: OpenAI Free Trial **does not allow embedding models**, so evaluation includes HuggingFace and Gemini only.
+> Evaluation includes HuggingFace and Gemini and OpenAI.
 
 ### **4. Compare Model Performance**
 
 To evaluate how well each embedding model retrieves relevant pages, **Mean NDCG (MNDCG)** is used.
 
-* For each query, top 10 search results are ranked.
+* For each query, top 50 search results are ranked.
 * NDCG is computed using:
 
   * Model ranking results
@@ -71,11 +71,12 @@ To evaluate how well each embedding model retrieves relevant pages, **Mean NDCG 
 * Final MNDCG across 50 queries:
 
 ```
-HuggingFace MiniLM      → 1.0  
-Gemini 005              → 1.0
+HuggingFace MiniLM      → 0.982222 
+Gemini 001              → 0.995947
+OpenAI                  → 0.988906
 ```
 
-Both models achieved **perfect MNDCG** based on the dataset and relevance labels.
+Gemini embedding model achieved **perfect MNDCG** based on the dataset and relevance label and out perform OpenAI and HuggingFace.
 
 ---
 
@@ -141,10 +142,10 @@ Both models achieved **perfect MNDCG** based on the dataset and relevance labels
 
 ### Result Summary
 
-Both **HuggingFace MiniLM** and **Gemini 001** achieved **MNDCG = 1.0**, meaning:
+**Gemini 001** achieved 0.995947 score and out perform **HuggingFace MiniLM** and **OpenAI** and **MNDCG = 1.0**, meaning:
 
-* Both models produced the *same ranking order* as ground truth for the tested dataset.
-* Both are suitable for semantic page–query relevance tasks.
+* Gemini models produced the *highest ranking order* as ground truth for the tested dataset.
+* Gemini is suitable for semantic page–query relevance tasks based on current dataset.
 
 ### Observations
 
@@ -153,12 +154,19 @@ Both **HuggingFace MiniLM** and **Gemini 001** achieved **MNDCG = 1.0**, meaning
   * Fast, no cost, low latency
   * Works offline
   * Excellent for large-scale indexing
+  * slow
 * **Gemini 001**
 
   * Slightly richer semantic understanding
   * Good for complex/longer queries
   * Cloud-dependent
+  * fast
+* **OpenAI small/large**
 
+  * Richer semantic understanding
+  * Good for complex/longer queries
+  * Cloud-dependent
+  * fast
 ---
 
 # 📁 Project Structure
@@ -171,6 +179,7 @@ project/
 |__ config.py
 |__ embedding_search_performance_evaluation.ipynb
 |__ README.md
+|__images/
 ```
 
 ---
@@ -232,7 +241,7 @@ OPENAI_API_KEY=""
 | --------------------------------- | --------------- | ---------------------------------------------------- |
 | **HuggingFace MiniLM**            | **0.982413**         | Best trade-off between speed, cost, and accuracy     |
 | **Gemini 001**                    | **0.995940**         | Strong semantic accuracy; ideal for complex language |
-| **OpenAI text-embedding-3-small** | **0.989484**               |
+| **OpenAI text-embedding-3-small** | **0.989484**         | Strong semantic accuracy; ideal for complex
 
 ### **Recommended Model (Business Perspective):**
 
