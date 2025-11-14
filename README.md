@@ -194,7 +194,7 @@ python -m venv denv
 .\denv\Scripts\activate
 ```
 
-## 4. Install Dependencies
+### 4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
