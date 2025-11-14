@@ -177,13 +177,35 @@ project/
 
 # 🚀 How to Run Locally
 
-### 1. Start Elasticsearch
+### 1. Clone the repository: 
+```bash
+git clone https://github.com/anamulislamshamim/search_optimization.git
+```
+
+### 2. Go to Project Directory
+```bash
+cd search_optimization
+```
+
+### 3. Create Virtual Environment and Active the it
+```bash
+python -m venv denv
+# windows
+.\denv\Scripts\activate
+```
+
+## 4. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Start Elasticsearch
 
 ```bash
 docker-compose up -d
 ```
 
-### 2. Run embedding_search_performance_evaluation.ipynb
+### 6. Run embedding_search_performance_evaluation.ipynb
 ```bash
    click run all of Jupyter Note book or run each section of code.
 ```
