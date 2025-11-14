@@ -84,7 +84,7 @@ Both models achieved **perfect MNDCG** based on the dataset and relevance labels
 | Component     | Technology                                                                       |
 | ------------- | -------------------------------------------------------------------------------- |
 | Web Crawling  | Python, BeautifulSoup                                                            |
-| Embeddings    | HuggingFace, Gemini, OpenAI API (key created but model unavailable in free tier) |
+| Embeddings    | HuggingFace, Gemini, OpenAI API                                                  |
 | Search Engine | Elasticsearch (Docker)                                                           |
 | Evaluation    | MNDCG (Mean Normalized Discounted Cumulative Gain)                               |
 | Storage       | Indexed webpages + embeddings in Elasticsearch                                   |
@@ -230,13 +230,10 @@ OPENAI_API_KEY=""
 
 | Model                             | MNDCG Score     | Summary                                              |
 | --------------------------------- | --------------- | ---------------------------------------------------- |
-| **HuggingFace MiniLM**            | **1.0**         | Best trade-off between speed, cost, and accuracy     |
-| **Gemini 005**                    | **1.0**         | Strong semantic accuracy; ideal for complex language |
-| **OpenAI text-embedding-3-small** | *Not evaluated* | Free tier does not allow embedding API               |
+| **HuggingFace MiniLM**            | **0.982413**         | Best trade-off between speed, cost, and accuracy     |
+| **Gemini 001**                    | **0.995940**         | Strong semantic accuracy; ideal for complex language |
+| **OpenAI text-embedding-3-small** | **0.989484**               |
 
 ### **Recommended Model (Business Perspective):**
 
-➡️ If cost & self-hosting matter → **HuggingFace MiniLM**
-➡️ If richer semantics preferred → **Gemini 001**
-
-Both models meet the business requirement of generating **interpretable, stable relevance scores**.
+➡️ I used OpenAI text-embedding-3-small and text-embedding-3-large still Gemini gemini-embedding-001 out perform both of them. OpenAI become second and HuggingFace "all-MiniLM-L6-v2" become 3rd.
