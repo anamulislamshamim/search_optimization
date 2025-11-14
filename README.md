@@ -205,7 +205,21 @@ pip install -r requirements.txt
 docker-compose up -d
 ```
 
-### 6. Run embedding_search_performance_evaluation.ipynb
+# 6. Example .env
+```bash
+ELASTICSEARCH_URL=""
+INDEX_NAME_HUGGINGFACE=""
+INDEX_NAME_GEMINI=""
+INDEX_NAME_OPENAI=""
+SITEMAP_URL=""
+HUGGINGFACE_EMBEDDING_MODEL_NAME=""
+GEMINI_EMBEDDING_MODEL_NAME=""
+OPENAI_EMBEDDING_MODEL_NAME=""
+GEMINI_API_KEY=""
+OPENAI_API_KEY=""
+```
+
+### 7. Run embedding_search_performance_evaluation.ipynb
 ```bash
    click run all of Jupyter Note book or run each section of code.
 ```
