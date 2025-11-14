@@ -1,4 +1,4 @@
-![Result Image](embedding_model_comparison_ndcg_fixed.png)
+![NDCG Search Metrics](images/embedding_model_comparison_ndcg_fixed.png)
 
 # 🧠 Embedding Model Comparison for Query–Webpage Relevance
 
