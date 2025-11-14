@@ -205,7 +205,7 @@ pip install -r requirements.txt
 docker-compose up -d
 ```
 
-# 6. Example .env
+### 6. Example .env
 ```bash
 ELASTICSEARCH_URL=""
 INDEX_NAME_HUGGINGFACE=""
